@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-3">
+		</div>
+		<div class="col-6">
+			<div class="card">
+			  <div class="card-body">
+			  	<h3>{{ postagem.titulo }}</h3>
+			  	<i>{{ postagem.data_criacao }}</i>
+			  	<br>
+			  	<p>Autor: {{ postagem.autor.username }}</p>
+			  	<br>
+			  	{% if postagem.data_publicacao %}
+			  		<p> Data Publicação: {{ postagem.data_publicacao }}</p>
+			  	{% endif %}
+			    <p class="card-text">{{ postagem.texto|linebrakesbr }}</p>
+			  </div>
+			</div>
+		</div>
+		<div class="col-3">
+		</div>
+	</div>
+</div>
+
+
+
+
+{% endblock %}
